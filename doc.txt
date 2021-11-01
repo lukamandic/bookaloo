@@ -1,0 +1,71 @@
+/login POST req: { email: '', password: '' }
+/refresh POST req: { refreshToken: '' }
+/authors-books POST (PAGINATION?) req: { paginationData: { page: '', offset: '' } } { success: true, message: '', paginationData: { page: '', offset: '', total: '' }, data: { firstName: '', lastName: '', email: '', books: [ { id: '', name: '', year: '' }, { id: '', name: '', year: '' }, { id: '', name: '', year: '' } ] }}
+/authors GET (PAGINATION?) req: { paginationData: { page: '', offset: '' } } { success: true, message: '', paginationData: { page: '', offset: '', total: '' }, data: { authors: [ { firstName: '', lastName: '', email: '' } ] } }
+/author POST            | req: { authorData: { firstName: '', lastName: '', email: '', password: '' } }
+/author/:id DELETE      | ===> { success: true, message: '', data: { firstName: '', lastName: '', email: '' } }
+/author/:id PUT         |
+
+/author/:id GET { success: true, message: '', data: { books: [ { id: '', name: '', year: '' } ] } }
+
+/book POST              | req: { bookData: { name: '', year: '', author: '' } }
+/book/:id DELETE        | ===> { success: true, message: '', data: { id: '', name: '', year: '' } }
+/book/:id PUT           |
+
+/books GET  ===> { success: true, message: '', data: { books: [ { id: '', name: '', year: '' }, { id: '', name: '', year: '' }, { id: '', name: '', year: '' } ] } }
+
+ROLES: admin, author
+
+Admin:
+can add, remove, edit authors (basic information - first name, last name, email, etc..)
+
+Authors:
+he/she can add, edit, delete his/her books
+
+EXAMPLE RESPONSES:
+
+{
+  success: true,
+  message: ''
+  data: {}
+}
+
+{
+  success: true,
+  message: '',
+  paginationData: {
+    page: '',
+    offset: '',
+    total: ''
+  },
+  data: {}
+}
+
+{
+  success: false,
+  message: ''
+}
+
+MESSAGES: 'Login failed', 'Adding author failed', 'Editing author failed', 'Removing author failed', 
+          'Login succeeded', 'Adding author succeeded', 'Editing author succeeded', 'Removing author succeeded',
+          'Adding book failed', 'Editing book failed', 'Removing book failed',
+          'Adding book succeeded', 'Editing book succeeded', 'Removing book succeeded',
+
+
+DATABASE:
+
+BOOKS:
+
+id: ObjId
+name: String
+year: Int
+author: ObjId
+
+USERS:
+
+id: ObjId
+firstName: String
+lastName: String
+email: String
+password: String
+role: String
