@@ -15,7 +15,6 @@ const userSlice = createSlice({
   reducers: {
     loginRequest: (state) => { state.loading = true },
     loginUser: (state, action) => {
-      console.log(action)
         state.firstName = action.payload.firstName
         state.lastName = action.payload.lastName
         state.accessToken = action.payload.accessToken

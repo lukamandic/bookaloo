@@ -54,8 +54,6 @@ export const postBook = async (req: Request, res: Response) => {
     const book = await new BookModel({ name: name.trim(), year: year, author })
     //const addBook = await new UserModel.updateOne({ _id: author }, { $push: {  } })
 
-    console.log(book)
-
     res.send({ book: book })
 }
 

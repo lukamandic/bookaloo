@@ -19,7 +19,7 @@ const login = async (req: Request, res: Response) => {
     if (foundUser) {
         const match = await bcrypt.compare(password.trim(), foundUser.password)
 
-        if (match) {console.log(foundUser)
+        if (match) {
 
             const accessToken = jwt.sign({ data: foundUser }, 'privateKey', { expiresIn: 60*60 })
             const refreshId = uuid4()

@@ -8,12 +8,12 @@ const Authors = () => {
     const token = useSelector( state => state )
     const [ email, setEmail ] = useState('')
     const [ password, setPassword ] = useState('')
-    console.log(token)
+    
     const handleLogin = async () => {
 
         try {
             const res = await instance.post('/login', { email, password })
-            console.log(res)
+            
         } catch(e) {
             
         }

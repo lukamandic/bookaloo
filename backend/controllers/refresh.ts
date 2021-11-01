@@ -12,9 +12,6 @@ const refresh = async (req: Request, res: Response) => {
 
     const verified = await jwt.verify(refreshToken, 'privateKey')
 
-    console.log('REFRESH')
-    console.log(verified)
-
     /*client.get(verified, async (err, data) => {
 
         if (err) return res.send({ succes: false, message: responses.SOMETHING_WENT_WRONG })

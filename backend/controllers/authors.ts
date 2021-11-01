@@ -58,8 +58,6 @@ export const editAuthor = async (req: Request, res: Response) => {
 
     const hash = bcrypt.hashSync(password.trim(), 12);
 
-    console.log(hash)
-
     const author = await UserModel.updateOne({ _id: id }, { firstName: firstName.trim(), lastName: lastName.trim(), email: email.trim(), password: hash })
 
     const resSuccess : SuccesfullResult = { 

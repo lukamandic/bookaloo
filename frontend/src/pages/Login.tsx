@@ -14,7 +14,6 @@ const Login = () => {
         try {
             dispatch(loginRequest)
             const res : any = await instance.post('/login', { email, password })
-            console.log(res)
             if (res.data.success === true && res.data.message === "Login succeeded") {
                 const payload = {
                     firstName: res.data.firstName,

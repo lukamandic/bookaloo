@@ -12,7 +12,7 @@ const Books = () => {
 
         try {
             const res = await instance.post('/login', { email, password })
-            console.log(res)
+            
         } catch(e) {
             
         }

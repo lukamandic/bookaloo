@@ -9,8 +9,7 @@ const bookAccessCheck = async (req: Request, res: Response, next: NextFunction) 
     try {
 
         const foundRecord = await BookModel.findById(bookId)
-
-        console.log(foundRecord)
+        
         if (foundRecord != null) {
             
             if (foundRecord.author.toString() === role.data._id) return next()

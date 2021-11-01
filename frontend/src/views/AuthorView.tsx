@@ -17,7 +17,7 @@ const AuthorView = () => {
     const token = useSelector( state => state )
     const [ email, setEmail ] = useState('')
     const [ password, setPassword ] = useState('')
-    console.log(token)
+    
     return (
         <div>
             <Router>
