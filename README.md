@@ -15,6 +15,7 @@ Backend API is on http://localhost:5000
 
 ```bash
 
+cd bookaloo/
 docker-compose up
 
 ```

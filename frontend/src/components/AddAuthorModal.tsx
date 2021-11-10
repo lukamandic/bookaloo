@@ -1,7 +1,7 @@
 import { Modal, Button } from 'antd';
 import React, { useState, useEffect } from "react";
 
-const AddAuthorModal = (props) => {
+const AddAuthorModal = (props : any) => {
     const [visible, setVisible] = React.useState(false);
     const [confirmLoading, setConfirmLoading] = useState(false);
     const [modalText, setModalText] = React.useState('Content of the modal');
@@ -11,9 +11,7 @@ const AddAuthorModal = (props) => {
             < Modal
             title={ props.title }
             visible={visible}
-            onOk={handleOk}
             confirmLoading={confirmLoading}
-            onCancel={handleCancel}
             />
         </>
     )
